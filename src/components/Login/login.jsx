@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = 'http://localhost:8080/api/auth';
+      const url = 'https://xenonstack-backend.herokuapp.com/api/auth';
       const { data: res } = await axios.post(url, data);
       localStorage.setItem('token', res.data);
       window.location = '/';
@@ -34,7 +34,7 @@ const Login = () => {
       <div className={styles.login_form_container}>
         <div className={styles.left}>
           <form className={styles.form_container} onSubmit={handleSubmit}>
-            <h1>Login to Your Account</h1>
+            <h1>Login To Your Account</h1>
             <input
               type='email'
               placeholder='Email'
@@ -60,6 +60,7 @@ const Login = () => {
           </form>
         </div>
         <div className={styles.right}>
+          <img src='images/logo-dark.png' alt='logo' width='150' />
           <h1>New Here ?</h1>
           <Link to='/signup'>
             <button type='button' className={styles.white_btn}>

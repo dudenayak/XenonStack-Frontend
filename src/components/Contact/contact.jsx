@@ -2,6 +2,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import FormInput from './formInput';
 import styles from './styles.module.css';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 const Contact = () => {
   const [data, setData] = useState({
@@ -15,18 +17,9 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(data);
     try {
-      const url = 'http://localhost:8080/api/contacts';
+      const url = 'https://xenonstack-backend.herokuapp.com/api/contacts';
       const { data: res } = await axios.post(url, data);
-      // console.log(res.message);
-      // setData({
-      //   username: '',
-      //   email: '',
-      //   birthday: '',
-      //   mobile: '',
-      //   message: '',
-      // });
       e.target.reset();
     } catch (error) {
       if (error.response) {
@@ -88,27 +81,31 @@ const Contact = () => {
   ];
 
   return (
-    <div className={styles.contact_container}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.h1}>Contact Us</h1>
-        {inputs.map((input) => (
-          <FormInput
-            name={input.name}
-            placeholder={input.placeholder}
-            type={input.type}
-            required={input.required}
-            key={input.id}
-            value={data[input.name]}
-            onChange={onChange}
-          />
-        ))}
+    <div>
+      <Navbar />
+      <div className={styles.contact_container}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <h1 className={styles.h1}>Contact Us</h1>
+          {inputs.map((input) => (
+            <FormInput
+              name={input.name}
+              placeholder={input.placeholder}
+              type={input.type}
+              required={input.required}
+              key={input.id}
+              value={data[input.name]}
+              onChange={onChange}
+            />
+          ))}
 
-        {error && <div className={styles.error_msg}>{error}</div>}
+          {error && <div className={styles.error_msg}>{error}</div>}
 
-        <button type='submit' className={styles.button}>
-          Submit
-        </button>
-      </form>
+          <button type='submit' className={styles.button}>
+            Submit
+          </button>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
 };

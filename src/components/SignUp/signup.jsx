@@ -20,7 +20,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = 'http://localhost:8080/api/users';
+      const url = 'https://xenonstack-backend.herokuapp.com/api/users';
       const { data: res } = await axios.post(url, data);
       navigate('/login');
       console.log(res.message);
@@ -39,6 +39,7 @@ const Signup = () => {
     <div className={styles.signup_container}>
       <div className={styles.signup_form_container}>
         <div className={styles.left}>
+          <img src='images/logo-dark.png' alt='logo' width='150' />
           <h1>Welcome Back</h1>
           <Link to='/login'>
             <button type='button' className={styles.white_btn}>
