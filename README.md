@@ -52,12 +52,12 @@ Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view the functioning of client side in the browser 🎉
 
 ### Glimpses 📷
- **Home Page** 👋 ![Home Page](images/Home.png) 
+ **Home Page** 👋 ![Home Page](images/home.png) 
 
  **Contact Us** 📞![Contact Us](images/contact.png) 
 
- **Login** 🔒  ![Login](images/Login.png)
+ **Login** 🔒  ![Login](images/login.png)
 
- **SignUp** ✅  ![SignUp](images/SignUp.png)
+ **SignUp** ✅  ![SignUp](images/signup.png)
 
  
