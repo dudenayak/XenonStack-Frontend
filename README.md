@@ -49,7 +49,9 @@ npm start
 ```
 Runs the app in the development mode.
 
-Open [http://localhost:3000](http://localhost:3000) to view the functioning of client side in the browser 🎉
+Open [http://localhost:3000](http://localhost:3000) to view the functioning of client side in the browser 
+OR
+The website is live on [https://xenonstack.vercel.app](https://xenonstack.vercel.app) 🎉
 
 ### Glimpses 📷
  **Home Page** 👋 ![Home Page](images/home.png) 
